@@ -26,7 +26,7 @@
           <div class="relative flex">
             <img class="object-cover rounded-[8px] w-[234px] h-[234px] md:w-full md:h-[423px] xl:w-[588px] xl:h-[588px]"
               src="./assets/images/LymoPDPImagesArtboard1_8e287aa1-576e-42b1-9a87-ce2fcdaded3a.webp" alt="" />
-            <div class="absolute left-1/2 -translate-x-1/2 bottom-[32px] z-10 flex gap-[8px] text-white px-[24px] py-[8px] max-w-[290px] min-w-[250px] leading-[1.2em] border border-black rounded-[24px] cursor-pointer text-[14px] bg-white/85 items-center whitespace-nowrap">
+            <div class="nutritional-info-btn absolute left-1/2 -translate-x-1/2 bottom-[32px] z-10 flex gap-[8px] text-white px-[24px] py-[8px] max-w-[290px] min-w-[250px] leading-[1.2em] border border-black rounded-[24px] cursor-pointer text-[14px] bg-white/85 items-center whitespace-nowrap">
               <img class="w-[24px] h-[24px]" src="./assets/images/leaves_1247958_1_cf2e7df4-c113-4c3a-be49-f876ec94d873.png" alt="" />
               <span class="text-black/80 text-[14px] tracking-wider font-montserrat font-normal">Nutritional Information</span>
             </div>
@@ -60,7 +60,7 @@
                   <div class="relative flex">
                     <img class="object-cover rounded-[8px] w-[401px] h-[401px] "
                       src="./assets/images/LymoPDPImagesArtboard1_8e287aa1-576e-42b1-9a87-ce2fcdaded3a.webp" alt="" />
-                    <div class="absolute left-1/2 -translate-x-1/2 bottom-[32px] z-10 flex gap-[8px] text-white px-[24px] py-[8px] max-w-[290px] min-w-[250px] leading-[1.2em] border border-black rounded-[24px] cursor-pointer text-[14px] bg-white/85 items-center whitespace-nowrap">
+                    <div class="nutritional-info-btn absolute left-1/2 -translate-x-1/2 bottom-[32px] z-10 flex gap-[8px] text-white px-[24px] py-[8px] max-w-[290px] min-w-[250px] leading-[1.2em] border border-black rounded-[24px] cursor-pointer text-[14px] bg-white/85 items-center whitespace-nowrap">
                       <img class="w-[24px] h-[24px]" src="./assets/images/leaves_1247958_1_cf2e7df4-c113-4c3a-be49-f876ec94d873.png" alt="" />
                       <span class="text-black/80 text-[14px] tracking-wider font-montserrat font-light">Nutritional Information</span>
                     </div>
@@ -413,9 +413,9 @@
             </div>
           </div>
 
-          <div
-            class="bg-black text-white font-bold text-[18px] cursor-pointer rounded-lg p-3 w-full text-center transition-all duration-200 leading-[32px] font-montserrat -mt-[6px]">
-            ADD TO CART</div>
+          <div class="bg-black text-white font-bold text-[18px] cursor-pointer rounded-lg p-3 w-full text-center transition-all duration-200 leading-[32px] font-montserrat -mt-[6px]">
+            ADD TO CART
+          </div>
 
           <div class="flex items-center justify-center gap-4">
             <div class="flex items-center gap-2">
@@ -809,7 +809,8 @@
       </div>
 
       <div class="mt-6 text-center">
-        <a class="max-w-[462px] font-nunito inline-block py-[16px] md:py-[18px] px-4 md:px-[80px] w-full cursor-pointer no-underline text-white bg-black rounded-[4px] text-[16px] md:text-[18px] transition-all duration-200  text-center border border-black hover:opacity-70" href="">Try Lymphatic Drainage Risk-Free</a>
+        <a class="max-w-[462px] font-nunito inline-block py-[16px] md:py-[18px] px-4 md:px-[80px] w-full cursor-pointer no-underline text-white
+         bg-black rounded-[4px] text-[16px] md:text-[18px] transition-all duration-200  text-center border border-black hover:opacity-70" href="">Try Lymphatic Drainage Risk-Free</a>
         <p class="flex items-center justify-center gap-4 text-base  mt-4">
           <span><img class="w-[24px] h-[24px]" src="./assets/images/60-days_11622780_1_1.webp" alt=""></span>
           <span class="font-nunito ">60 day money-back guarantee</span>
@@ -1143,12 +1144,13 @@
         <div class="mb-4 font-bold text-[22.5px] md:text-[24px] opacity-75">Write a review</div>
         <div class="mb-6 opacity-75">
           <label for="" class="block mb-2">Rating</label>
-          <span class="flex items-center justify-center gap-[1px]">
-            <img class="w-[28px] h-[28px]" src="./assets/images/star-regular-full.svg" alt="">
-            <img class="w-[28px] h-[28px]" src="./assets/images/star-regular-full.svg" alt="">
-            <img class="w-[28px] h-[28px]" src="./assets/images/star-regular-full.svg" alt="">
-            <img class="w-[28px] h-[28px]" src="./assets/images/star-regular-full.svg" alt="">
-            <img class="w-[28px] h-[28px]" src="./assets/images/star-regular-full.svg" alt="">
+          <span class="flex items-center justify-center gap-[1px]" id="ratingStars">
+            <img class="w-[28px] h-[28px] cursor-pointer rating-star" data-rating="1" src="./assets/images/star-regular-full.svg" alt="">
+            <img class="w-[28px] h-[28px] cursor-pointer rating-star" data-rating="2" src="./assets/images/star-regular-full.svg" alt="">
+            <img class="w-[28px] h-[28px] cursor-pointer rating-star" data-rating="3" src="./assets/images/star-regular-full.svg" alt="">
+            <img class="w-[28px] h-[28px] cursor-pointer rating-star" data-rating="4" src="./assets/images/star-regular-full.svg" alt="">
+            <img class="w-[28px] h-[28px] cursor-pointer rating-star" data-rating="5" src="./assets/images/star-regular-full.svg" alt="">
+            <input type="hidden" id="ratingValue" name="rating" value="0">
           </span>
         </div>
         <div class="mb-6 opacity-75">
@@ -1197,7 +1199,7 @@
             <a class="text-blue-700 underline" href="https://judge.me/content-policy" target="_blank" rel="nofollow noopener">content</a>  policies.
           </p>
         </div>
-        <div class="mb-6 flex flex-col md:flex-row">
+        <div class="mb-6 flex flex-col md:flex-row md:justify-center">
           <div>
             <button class="md:mr-[10px] border-[2px] text-[#fb8a85] border-[#fb8a85] py-[10px] px-[24px] md:px-[20px] font-bold cursor-pointer" id="cancelReviewBtn">Cancel review</button>
           </div>
@@ -1233,7 +1235,7 @@
           </span>
         </div>
       </div>
-      <div id="comments-s">
+      <div id="comments">
         <div class="pt-4 border-t border-[#fa8a8a1a]">
           <div class="mb-[10px]">
             <div class="mb-2 flex items-center justify-between">
@@ -1265,24 +1267,22 @@
         </div>
       </div>
     </div>
-    <div class="py-4 mb-5 leading-1.4 font-montserrat text-[#fa8a8a] flex items-center justify-center">
-      <a class="py-1 px-2 w-[32px] hover:opacity-50" href="#">
+    <div class="py-4 mb-5 leading-1.4 font-montserrat text-[#fa8a8a] flex items-center justify-center" id="paginationContainer">
+      <button class="py-1 px-2 w-[32px] hover:opacity-50 cursor-pointer" id="firstPage">
         <img class="w-[24px]" src="./assets/images/first_page_24dp_DF9D9B_FILL0_wght400_GRAD0_opsz24.svg" alt="">
-      </a>
-      <a class="py-1 px-2 w-[32px] hover:opacity-50" href="#">
+      </button>
+      <button class="py-1 px-2 w-[32px] hover:opacity-50 cursor-pointer" id="prevPage">
         <img class="w-[24px]" src="./assets/images/keyboard_arrow_left_24dp_DF9D9B_FILL0_wght400_GRAD0_opsz24.svg"
           alt="">
-      </a>
-      <a class="py-1 px-2 w-[32px] hover:opacity-50" href="#">1</a>
-      <a class="py-1 px-2 w-[32px] cursor-none text-[#7b7b7b] font-bold text-[24px]" href="#">2</a>
-      <a class="py-1 px-2 w-[32px] hover:opacity-50" href="#">3</a>
-      <a class="py-1 px-2 w-[32px] hover:opacity-50" href="#">
+      </button>
+      <div id="pageNumbers"></div>
+      <button class="py-1 px-2 w-[32px] hover:opacity-50 cursor-pointer" id="nextPage">
         <img class="w-[24px]" src="./assets/images/keyboard_arrow_right_24dp_DF9D9B_FILL0_wght400_GRAD0_opsz24.svg"
           alt="">
-      </a>
-      <a class="py-1 px-2 w-[32px] hover:opacity-50" href="#">
+      </button>
+      <button class="py-1 px-2 w-[32px] hover:opacity-50 cursor-pointer" id="lastPage">
         <img class="w-[24px]" src="./assets/images/last_page_24dp_DF9D9B_FILL0_wght400_GRAD0_opsz24.svg" alt="">
-      </a>
+      </button>
     </div>
   </div>
 
@@ -1353,12 +1353,7 @@
         <h2 class="text-title !font-lora text-center">See The Stories of Sculptique™ Women Firsthand</h2>
       </div>
       <div class="relative">
-        <div
-          class="relative block box-border select-none touch-pan-y [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none]">
-          <button
-            class="absolute top-1/2 block w-5 h-5 p-0 text-[0] leading-[0] -translate-y-1/2 cursor-pointer text-transparent border-0 outline-none bg-transparent">
-            <img class="w-[64px] h-[64px] overflow-clip" src="./assets/images/iconamoon_arrow-up-2-thin_1.webp" alt="">
-          </button>
+        <div class="relative block box-border select-none touch-pan-y [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none]">
           <div class="relative block overflow-hidden mb-[10px] p-0">
             <div class="opacity-100 w-[3110px] transform-gpu translate-0 flex gap-4 md:gap-0" id="videoSlider">
               <div class="w-[327px] w-[327px] md:w-[231px] xl:w-[310px] py-2 md:p-2">
@@ -1443,7 +1438,7 @@
               </div>
             </div>
           </div>
-          <ul class="w-full max-w-[calc(100%-200px)] flex gap-0">
+          <ul class="w-full max-w-[calc(100%-100px)] md:max-w-[calc(100%-200px)] flex gap-0">
             <li class="relative inline-block h-[20px] w-full p-0 cursor-pointer">
               <button class="bg-[#039869] p-0 h-[4px] w-full" id="processBar"></button>
             </li>
@@ -1460,6 +1455,18 @@
               <button class="bg-[#00000026] p-0 h-[4px] w-full" id="processBar"></button>
             </li>
             <li class="relative inline-block h-[20px] w-full p-0 cursor-pointer">
+              <button class="bg-[#00000026] p-0 h-[4px] w-full" id="processBar"></button>
+            </li>
+            <li class="md:hidden relative inline-block h-[20px] w-full p-0 cursor-pointer">
+              <button class="bg-[#00000026] p-0 h-[4px] w-full" id="processBar"></button>
+            </li>
+            <li class="md:hidden relative inline-block h-[20px] w-full p-0 cursor-pointer">
+              <button class="bg-[#00000026] p-0 h-[4px] w-full" id="processBar"></button>
+            </li>
+            <li class="md:hidden relative inline-block h-[20px] w-full p-0 cursor-pointer">
+              <button class="bg-[#00000026] p-0 h-[4px] w-full" id="processBar"></button>
+            </li>
+            <li class="md:hidden relative inline-block h-[20px] w-full p-0 cursor-pointer">
               <button class="bg-[#00000026] p-0 h-[4px] w-full" id="processBar"></button>
             </li>
           </ul>
@@ -1549,11 +1556,87 @@
   </div>
 
 
+  <!-- Nutritional Information Modal -->
+  <div id="nutritionalModal" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center">
+    <div class="bg-white rounded-[12px] p-4 max-w-[450px] max-h-[100vh] overflow-y-auto relative">
+      <div class="relative bg-white border-b border-gray-200 flex justify-between items-center">
+        <h2 class="text-[24px] md:text-[28px] !font-lora text-center mb-4 w-full leading-[1.4em]">Nutritional Information</h2>
+        <button id="closeModal">
+          <img class="absolute top-[-8px] right-[-8px] w-[22px] h-[23px] rotate-45 cursor-pointer rounded-full border border-[#d6416e]" src="./assets/images/Button_To_Expand.png" alt="">
+        </button>
+      </div>
+      <div class="w-[374px] md:w-full">
+        <img class="hidden md:block w-[418px] h-[460px]" src="./assets/images/ingredients-min.png" alt="">
+        <img class="block md:hidden w-[374px] h-[412px]" src="./assets/images/ingredients-min.png" alt="">
+        <a class="block font-montserrat leading-[1.8em] p-[18px] md:p-5 my-4 w-full cursor-pointer text-white bg-black rounded-[8px] text-[16px] transition-all duration-200  text-center border border-black font-montserrat hover:opacity-70" href="">Try Lymphatic Drainage Risk-Free</a>
+        <div class="flex flex-col md:items-center md:justify-center gap-2">
+          <div class="flex flex-col md:flex-row gap-2">
+            <div class="flex items-center">
+              <img class="w-[16px] h-[16px]" src="./assets/images/Mark_Icon_ce1ad4c9-5ec0-4162-969e-b565980ab82b.png" alt="">
+              <span class="font-nunito text-[12px] ml-1 leading-[1.3em]">Made & produced in the USA</span>
+            </div>
+            <div class="flex items-center">
+              <img class="w-[16px] h-[16px]" src="./assets/images/Mark_Icon_ce1ad4c9-5ec0-4162-969e-b565980ab82b.png" alt="">
+              <span class="font-nunito text-[12px] ml-1 leading-[1.3em]">100% Natural Ingredients</span>
+            </div>
+          </div>
+          <div class="flex gap-2">
+            <div class="flex items-center">
+              <img class="w-[16px] h-[16px]" src="./assets/images/Mark_Icon_ce1ad4c9-5ec0-4162-969e-b565980ab82b.png" alt="">
+              <span class="font-nunito text-[12px] ml-1 leading-[1.3em]">60-Day Money-Back Guarantee</span>
+            </div>
+            <div class="flex items-center">
+              <img class="w-[16px] h-[16px]" src="./assets/images/Mark_Icon_ce1ad4c9-5ec0-4162-969e-b565980ab82b.png" alt="">
+              <span class="font-nunito text-[12px] ml-1 leading-[1.3em]">Free Shipping</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
   <script src="js/handlecomment.js"></script>
   <script src="js/handlefqa.js"></script>
   <script src="js/handlevideo.js"></script>
   <script src="js/handleslider.js"></script>
+  <script>
+    // Nutritional Information Modal Handler
+    const modal = document.getElementById('nutritionalModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const nutritionalBtns = document.querySelectorAll('.nutritional-info-btn');
+
+    // Add click event to all nutritional information buttons
+    nutritionalBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      });
+    });
+
+    // Close modal when clicking close button
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    });
+  </script>
 </body>
 
 </html>

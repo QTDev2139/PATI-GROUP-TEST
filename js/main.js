@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
         review.style.marginTop = "32px";
         review.classList.add("active");
         review.dataset.open = "true";
-        
+        writeReviewBtn.innerText = "Cancel review"
         // Smooth scroll xuống phần review
         review.scrollIntoView({ behavior: "smooth", block: "start" });
       } else {
@@ -129,11 +129,13 @@ document.addEventListener("DOMContentLoaded", function () {
         review.style.marginTop = "0";
         review.classList.remove("active");
         review.dataset.open = "false";
+        writeReviewBtn.innerText = "Write a review";
       }
     };
 
     writeReviewBtn.addEventListener("click", () => {
-      toggleReview(true);
+      const isOpen = review.dataset.open === "true";
+      toggleReview(!isOpen);
     });
     
     if (cancelReviewBtn) {
@@ -142,5 +144,45 @@ document.addEventListener("DOMContentLoaded", function () {
         toggleReview(false);
       });
     }
+  }
+
+  // Xử lý rating stars (hover + click)
+  const ratingStars = document.querySelectorAll(".rating-star");
+  const ratingValue = document.getElementById("ratingValue");
+  let selectedRating = 0;
+
+  const updateStars = (rating) => {
+    ratingStars.forEach((star, index) => {
+      if (index < rating) {
+        star.src = "./assets/images/star-solid-full.svg";
+      } else {
+        star.src = "./assets/images/star-regular-full.svg";
+      }
+    });
+  };
+
+  ratingStars.forEach((star) => {
+    // Hover effect
+    star.addEventListener("mouseenter", () => {
+      const rating = parseInt(star.getAttribute("data-rating"));
+      updateStars(rating);
+    });
+
+    // Click to select
+    star.addEventListener("click", () => {
+      selectedRating = parseInt(star.getAttribute("data-rating"));
+      if (ratingValue) {
+        ratingValue.value = selectedRating;
+      }
+      updateStars(selectedRating);
+    });
+  });
+
+  // Reset to selected rating when mouse leaves
+  const ratingContainer = document.getElementById("ratingStars");
+  if (ratingContainer) {
+    ratingContainer.addEventListener("mouseleave", () => {
+      updateStars(selectedRating);
+    });
   }
 });
