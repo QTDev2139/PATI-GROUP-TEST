@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #f8f4f0;
+  --color-brand-primary: #1a1a1a;
+  --color-brand-accent: #c4a484;
+  --color-brand-green: #039869;
+
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-assistant: "Assistant", sans-serif;
+  --font-nunito: "Nunito", sans-serif;
+  --font-lora: "Lora", serif;
+  --font-opensans: "Open Sans", sans-serif;
+  --font-trirong: "Trirong", serif;
+  --font-arial: "Arial", sans-serif;
+
+  /* --text-heading-large: 1.875rem; 30px */
+  /* --text-heading-base: 1.5rem; 24px */
+  /* --text-body: 1.125rem; 18px */
+  /* --text-md: 1.25rem; 20px */
+  /* --text-tiny: 0.75rem; 12px */
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+@layer components {
+  .container-responsive {
+    max-width: 720px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @apply md:max-w-[1340px] md:mx-[90.4px] md:px-[50px];
+  }
+  .text-title {
+    font-size: 24px;
+    margin: 16px 0;
+    line-height: 1.3em;
+    font-weight: var(--font-weight-normal);
+    font-family: var(--font-lora);
+    
+    @apply md:text-[32px];
+  }
+
+  .text-body {
+    font-size: 16px;
+    line-height: 1.3em;
+    font-family: var(--font-nunito);
+    /* Force exact sizes via utilities to beat default text-body */
+    @apply md:text-[18px];
+  }
+
+  @keyframes logoScroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-logo-scroll {
+    animation: logoScroll 30s linear infinite;
+  }
+
+  /* Slide toggle transition base styles */
+  .slide-toggle {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+      all 500ms ease,
+      transform 500ms ease;
+  }
+
+  .slide-toggle.active {
+    opacity: 1;
+  }
+}
+
+body {
+  letter-spacing: 0.5px;
+  font-family: var(--font-opensans);
+  line-height: 1.3em;
+  font-style: var(--font-weight-normal);
+  /* font-size: 1.6rem; */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-trirong);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: 0.6px;
+}
+
+p {
+  font-family: var(--font-nunito);
+  line-height: 1.3em;
+}
+
+
