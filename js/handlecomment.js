@@ -61,16 +61,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!pageNumbersContainer) return;
 
-    // Tính toán range của page buttons để hiển thị
     let startPage = Math.max(1, currentPage - Math.floor(maxPageButtons / 2));
     let endPage = Math.min(totalPages, startPage + maxPageButtons - 1);
 
-    // Điều chỉnh startPage nếu endPage đã chạm totalPages
     if (endPage - startPage + 1 < maxPageButtons) {
       startPage = Math.max(1, endPage - maxPageButtons + 1);
     }
 
-    // Tạo HTML cho các nút số trang
     let pageButtonsHtml = '';
     for (let i = startPage; i <= endPage; i++) {
       if (i === currentPage) {
@@ -80,10 +77,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Cập nhật các nút số trang
     pageNumbersContainer.innerHTML = pageButtonsHtml;
 
-    // Cập nhật trạng thái disabled cho các nút navigation
     if (currentPage === 1) {
       firstPageBtn.classList.add('hidden', 'pointer-events-none');
       prevPageBtn.classList.add('hidden', 'pointer-events-none');
@@ -100,12 +95,10 @@ document.addEventListener("DOMContentLoaded", function () {
       lastPageBtn.classList.remove('hidden', 'pointer-events-none');
     }
 
-    // Add event listeners cho các nút số trang
     attachPageNumberListeners();
   };
 
   const attachPageNumberListeners = () => {
-    // Page number buttons
     document.querySelectorAll('[data-page]').forEach(button => {
       button.addEventListener('click', (e) => {
         const page = parseInt(e.target.getAttribute('data-page'));
@@ -119,7 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const attachNavigationListeners = () => {
-    // First page
     document.getElementById('firstPage')?.addEventListener('click', () => {
       if (currentPage !== 1) {
         currentPage = 1;
@@ -128,7 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Previous page
     document.getElementById('prevPage')?.addEventListener('click', () => {
       if (currentPage > 1) {
         currentPage--;
@@ -137,7 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Next page
     document.getElementById('nextPage')?.addEventListener('click', () => {
       if (currentPage < totalPages) {
         currentPage++;
@@ -146,7 +136,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Last page
     document.getElementById('lastPage')?.addEventListener('click', () => {
       if (currentPage !== totalPages) {
         currentPage = totalPages;
@@ -157,14 +146,12 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const scrollToComments = () => {
-    // Scroll to comments section smoothly
     const commentsSection = document.getElementById('comments');
     if (commentsSection) {
       commentsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
-  // Attach navigation listeners một lần khi load trang
   attachNavigationListeners();
 
   fetch("../data/comment.json")

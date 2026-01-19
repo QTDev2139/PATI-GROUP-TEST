@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Xử lý video - Play/Pause with image toggle
+  // Xử lý video Play/Pause 
   const videoContainers = document.querySelectorAll('#videoSlider > div');
   let currentPlayingVideo = null;
 
@@ -10,11 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (videoWrapper && playImg && video) {
       videoWrapper.addEventListener('click', () => {
-        // Nếu có video đang play khác, pause nó
         if (currentPlayingVideo && currentPlayingVideo !== video) {
           currentPlayingVideo.pause();
           currentPlayingVideo.currentTime = 0;
-          // Hiển thị lại image của video cũ
           const oldPlayImg = currentPlayingVideo.parentElement.querySelector('#playImg');
           if (oldPlayImg) {
             oldPlayImg.style.display = 'block';
@@ -22,12 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (video.paused) {
-          // Play video and hide image
           video.play();
           playImg.style.display = 'none';
           currentPlayingVideo = video;
         } else {
-          // Pause video and show image
           video.pause();
           video.currentTime = 0;
           playImg.style.display = 'block';
@@ -35,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
-      // Show image when video ends
       video.addEventListener('ended', () => {
         playImg.style.display = 'block';
         currentPlayingVideo = null;
@@ -44,15 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Xử lý carousel navigation
-  const videoCarouselContainer = document.querySelector('.relative.block.overflow-hidden.mb-\\[10px\\].p-0');
-  const videoSlider = videoCarouselContainer?.querySelector('.opacity-100');
+  const videoSlider = document.querySelector('#videoSlider');
   const progressBars = document.querySelectorAll('#processBar');
   const prevBtn = document.querySelector('#prevVideo');
   const nextBtn = document.querySelector('#nextVideo');
   
   let currentSlide = 0;
   const totalSlides = progressBars.length;
-  const slideWidth = 310; // width of each video container
+  const slideWidth = 310; 
 
   function updateProgressBar(index) {
     progressBars.forEach((bar, i) => {
