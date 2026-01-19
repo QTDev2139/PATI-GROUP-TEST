@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   attachNavigationListeners();
 
-  fetch("../data/comment.json")
+  fetch("./data/comment.json")
     .then((res) => res.json())
     .then((data) => {
       allComments = data;
