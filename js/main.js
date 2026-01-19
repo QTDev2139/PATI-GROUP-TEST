@@ -104,4 +104,35 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // xử lý Nutritional 
+  const modal = document.getElementById('nutritionalModal');
+  const closeModalBtn = document.getElementById('closeModal');
+  const nutritionalBtns = document.querySelectorAll('.nutritional-info-btn');
+
+  nutritionalBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    });
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  });
 });

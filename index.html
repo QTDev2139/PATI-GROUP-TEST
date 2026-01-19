@@ -1236,7 +1236,7 @@
         </div>
       </div>
       <div id="comments">
-        <div class="pt-4 border-t border-[#fa8a8a1a]">
+        <!-- <div class="pt-4 border-t border-[#fa8a8a1a]">
           <div class="mb-[10px]">
             <div class="mb-2 flex items-center justify-between">
               <span class="flex">
@@ -1264,7 +1264,7 @@
             <p class="text-[15px] md:text-[16px]">One month and I’ve already seen a difference!</p>
           </div>
           <div class="py-4"></div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="py-4 mb-5 leading-1.4 font-montserrat text-[#fa8a8a] flex items-center justify-center" id="paginationContainer">
@@ -1601,43 +1601,6 @@
   <script src="js/handlefqa.js"></script>
   <script src="js/handlevideo.js"></script>
   <script src="js/handleslider.js"></script>
-  <script>
-    // Nutritional Information Modal Handler
-    const modal = document.getElementById('nutritionalModal');
-    const closeModalBtn = document.getElementById('closeModal');
-    const nutritionalBtns = document.querySelectorAll('.nutritional-info-btn');
-
-    // Add click event to all nutritional information buttons
-    nutritionalBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-      });
-    });
-
-    // Close modal when clicking close button
-    closeModalBtn.addEventListener('click', () => {
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-    });
-
-    // Close modal when clicking outside
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-      }
-    });
-
-    // Close modal with Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-      }
-    });
-  </script>
 </body>
 
 </html>
