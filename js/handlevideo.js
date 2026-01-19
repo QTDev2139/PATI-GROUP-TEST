@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
   let currentSlide = 0;
   const totalSlides = progressBars.length;
-  const slideWidth = 310; 
+  const slideWidth = 309; 
 
   function updateProgressBar(index) {
     progressBars.forEach((bar, i) => {
